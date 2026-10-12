@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Service Areas | Puresight Window Cleaning</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600&family=Righteous&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body data-page="areas">
+  <main>
+    <section class="areas-intro">
+      <h1 class="h3">Areas Served</h1>
+      <p class="p">We proudly service almost all areas and neighborhoods in eagle county</p>
+    </section>
+    <section class="section section-alt">
+      <h2 class="section-title">Areas Served</h2>
+      <div class="areas" id="areas"></div>
+    </section>
+  </main>
+  <script src="site.js"></script>
+  <script>
+    var AVON_DESC = "Proudly serving all types of homes, townhomes, and condos in Avon plus nearby communities";
+    var regions = [
+      { name: "Vail", desc: "", areas: [
+        ["Town of Vail", "Offering all services in town of vail, Vail rd, Forest Rd, Meadow Dr...ECT from Condos in the village to the exclusive neigborhoods in the village!"],
+        ["West vail", "Serving West vail on both sides of the valley all the way from Dowd junction to Lionshead. Dont worry if your home sits on a steep hill, we have specialized equipment to service all types of homes"],
+        ["Vail Golf Course", "Proudly servicing all neigborhoods east of central vail along the golf course as well as surrounding areas."],
+        ["East Vail", "Offering Service to east vail, on both sides of the Valley"]
+      ]},
+      { name: "Minturn", desc: "Proudly serving all minturn area for all its window cleaning needs", areas: [] },
+      { name: "Avon", desc: AVON_DESC, areas: [
+        ["Town of Avon"], ["Eagle Vail"], ["Mountain Star"], ["Wildridge & Wildwood"], ["Beaver Creek"], ["Bachelor Gulch"]
+      ]},
+      { name: "Edwards", desc: AVON_DESC, areas: [
+        ["Edwards center"], ["Arrowhead"], ["Singletree"], ["Homestead"], ["Lake creek"],
+        ["Cordillera", "proudly serving all 4 areas of cordillera. Valley, Divide, Ranch, and Summit. we are cleared for gate access to all cordillera"]
+      ]},
+      { name: "Wolcott", desc: AVON_DESC, areas: [
+        ["Wolcott north side"], ["Red sky Ranch"], ["Bellyache Ridge"]
+      ]},
+      { name: "Eagle & Gypsum", desc: AVON_DESC, areas: [
+        ["Eby Creek"], ["Town of Eagle"], ["Eagle Ranch"], ["Frost Creek"], ["Town of Gypsum", "proudly serving all of gypsum"]
+      ]}
+    ];
+    var esc = function (s) { return s.replace(/&/g, "&amp;").replace(/</g, "&lt;"); };
+    document.getElementById("areas").innerHTML = regions.map(function (r) {
+      return '<div class="region"><h3 class="region-name">' + esc(r.name) + '</h3>' +
+        '<p class="region-desc">' + esc(r.desc) + '</p>' +
+        r.areas.map(function (a) {
+          return '<div class="area"><h4 class="h3">' + esc(a[0]) + '</h4><p class="p">' + esc(a[1] || "proudly serving") + '</p></div>';
+        }).join("") + '</div>';
+    }).join("");
+  </script>
+</body>
+</html>

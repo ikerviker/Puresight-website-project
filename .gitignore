@@ -1,0 +1,8 @@
+.env
+.env.local
+.vercel
+node_modules
+temporary screenshots
+
+# reference screenshots of the old GoDaddy site
+puresightwc.com_*.png
