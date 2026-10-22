@@ -278,7 +278,7 @@ a.topbar:focus-visible { outline: 2px solid #fff; outline-offset: -4px; }
 .traits { grid-column: 1; padding: 0 9.5vw 72px; }
 .trait + .trait { margin-top: 36px; }
 .traits-media { grid-column: 2; grid-row: 2; position: relative; margin-top: -28px; }
-.traits-media img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 56%; }
+.traits-media img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 28%; }
 
 /* ---------- process ---------- */
 .process {
