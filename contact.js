@@ -56,6 +56,8 @@
       if (!this.closest(".field").classList.contains("invalid")) return;
       var errs = validate(values());
       setFieldError(n, errs[n]);
+      // Once every field is fixed, drop the "Check the highlighted fields." note too.
+      if (!form.querySelector(".field.invalid")) setNote("", "");
     });
   });
 
