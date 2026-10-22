@@ -44,7 +44,7 @@
   function values() {
     var get = function (n) { return (form.elements[n].value || "").trim(); };
     return {
-      name: get("name"), email: get("email"), phone: get("phone"),
+      name: get("name"), email: get("email"), phone: get("phone"), service: get("service"),
       address: get("address"), timeframe: get("timeframe"), message: get("message"),
       company: form.elements.company.value
     };

@@ -20,7 +20,7 @@
   var header =
     '<div class="topbar">' +
       '<span class="tb-pair">' + leaf("") + leaf("tb-flip") + '</span>' + autumnLeaf +
-      '<span class="tb-text">Fall Special: $50 off Gutter cleaning Bundled with window Clean</span>' +
+      '<span class="tb-text">Fall Special: $50 off gutter cleaning when you bundle it with a window cleaning</span>' +
       leaf("tb-flip") + leaf("tb-far") +
     '</div>' +
     '<header class="header">' +

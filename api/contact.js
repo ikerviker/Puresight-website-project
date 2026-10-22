@@ -8,6 +8,7 @@
 //                                 e.g. "Puresight Website <website@puresightwc.com>"
 
 const LIMITS = { name: 100, email: 254, phone: 30, address: 200, timeframe: 100, message: 5000 };
+const SERVICES = ["Window cleaning", "Gutter cleaning", "Solar panel cleaning", "More than one service", "Not sure yet"];
 const EMAIL_RE = /^[^\s@<>()[\]\\,;:"]+@[^\s@<>()[\]\\,;:"]+\.[^\s@<>()[\]\\,;:"]{2,}$/;
 
 function clean(value, max) {
@@ -29,6 +30,8 @@ export function validate(body) {
     name: oneLine(clean(body.name, LIMITS.name)),
     email: oneLine(clean(body.email, LIMITS.email)),
     phone: oneLine(clean(body.phone, LIMITS.phone)),
+    // Optional; anything outside the dropdown's choices is dropped.
+    service: SERVICES.includes(body.service) ? body.service : "",
     address: oneLine(clean(body.address, LIMITS.address)),
     timeframe: oneLine(clean(body.timeframe, LIMITS.timeframe)),
     message: clean(body.message, LIMITS.message),
@@ -49,6 +52,7 @@ function buildEmail(d) {
     ["Name", d.name],
     ["Email", d.email],
     ["Phone", d.phone],
+    ["Service", d.service || "Not specified"],
     ["Address", d.address || "Not provided"],
     ["Preferred date/timeframe", d.timeframe || "Not provided"],
   ];
