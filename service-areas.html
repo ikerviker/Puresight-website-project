@@ -3,17 +3,58 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Service Areas | Puresight Window Cleaning</title>
+  <!-- TODO(owner): replace G-XXXXXXXXXX with your real GA4 Measurement ID -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  </script>
+  <title>Service Areas | Window Cleaning in Vail, Avon, Edwards &amp; Eagle, CO</title>
+  <meta name="description" content="Puresight Window Cleaning serves Vail, Minturn, Avon, Edwards, Wolcott, Eagle &amp; Gypsum. See the neighborhoods we cover in Eagle County, CO.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Service Areas | Window Cleaning in Vail, Avon, Edwards &amp; Eagle, CO">
+  <meta property="og:description" content="Puresight Window Cleaning serves Vail, Minturn, Avon, Edwards, Wolcott, Eagle &amp; Gypsum. See the neighborhoods we cover in Eagle County, CO.">
+  <meta property="og:image" content="https://puresight-website-project.vercel.app/images/service-window.jpg">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600&family=Righteous&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Puresight Window Cleaning",
+    "description": "Window, gutter and solar panel cleaning serving Eagle County, Colorado.",
+    "url": "https://puresight-website-project.vercel.app/",
+    "telephone": "+1-970-306-7489",
+    "email": "iker@puresightwc.com",
+    "image": "https://puresight-website-project.vercel.app/images/service-window.jpg",
+    "openingHours": "Mo-Sa 08:00-17:00",
+    "address": {
+      "@type": "PostalAddress",
+      "addressRegion": "CO",
+      "addressCountry": "US"
+    },
+    "areaServed": [
+      "Vail",
+      "Minturn",
+      "Avon",
+      "Edwards",
+      "Wolcott",
+      "Eagle",
+      "Gypsum"
+    ]
+  }
+  </script>
 </head>
 <body data-page="areas">
   <main>
     <section class="areas-intro">
       <h1 class="h3">Areas Served</h1>
-      <p class="p">We proudly service almost all areas and neighborhoods in eagle county</p>
+      <p class="p">We proudly service almost all areas and neighborhoods in Eagle County</p>
     </section>
     <section class="section section-alt">
       <h2 class="section-title">Areas Served</h2>
@@ -32,17 +73,32 @@
       ]},
       { name: "Minturn", desc: "Proudly serving all of the Minturn area for all its window cleaning needs", areas: [] },
       { name: "Avon", desc: AVON_DESC, areas: [
-        ["Town of Avon"], ["Eagle Vail"], ["Mountain Star"], ["Wildridge & Wildwood"], ["Beaver Creek"], ["Bachelor Gulch"]
+        ["Town of Avon", "Proudly serving homes, townhomes, and condos throughout the Town of Avon, from the Nottingham Lake area to the neighborhoods up the hillsides."],
+        ["Eagle Vail", "Serving all of Eagle Vail, from the townhomes along the valley floor to the single-family homes on both sides of Highway 6."],
+        ["Mountain Star", "Proudly serving the large mountain homes of Mountain Star, with the equipment to reach tall windows and steep lots safely."],
+        ["Wildridge & Wildwood", "Serving every home, duplex, and townhome in Wildridge and Wildwood — big views mean big windows, and we'll leave them spotless."],
+        ["Beaver Creek", "Proudly serving homes, condos, and townhomes throughout Beaver Creek. We're happy to coordinate gate access for this gated resort community."],
+        ["Bachelor Gulch", "Serving the homes and residences of Bachelor Gulch. We're happy to coordinate gate access for this gated resort community."]
       ]},
       { name: "Edwards", desc: "Proudly serving all types of homes, townhomes, and condos in Edwards plus nearby communities", areas: [
-        ["Edwards center"], ["Arrowhead"], ["Singletree"], ["Homestead"], ["Lake Creek"],
+        ["Edwards Center", "Proudly serving the homes, condos, and businesses in and around Edwards, from Riverwalk to the Edwards Village Center."],
+        ["Arrowhead", "Serving the homes, townhomes, and condos of Arrowhead, from the base area to the homes along the golf course."],
+        ["Singletree", "Proudly serving all of Singletree, from the homes along the golf course to the hillside lots with big valley views."],
+        ["Homestead", "Serving every home, townhome, and condo in Homestead."],
+        ["Lake Creek", "Proudly serving the homes and ranches along Lake Creek Road, no matter how far up the valley you are."],
         ["Cordillera", "Proudly serving all 4 areas of Cordillera: the Valley, Divide, Ranch, and Summit. We are cleared for gate access to all Cordillera communities."]
       ]},
       { name: "Wolcott", desc: "Proudly serving all types of homes, townhomes, and condos in Wolcott plus nearby communities", areas: [
-        ["Wolcott north side"], ["Red Sky Ranch"], ["Bellyache Ridge"]
+        ["Wolcott North Side", "Proudly serving the homes and ranches on the north side of Wolcott."],
+        ["Red Sky Ranch", "Serving the homes of Red Sky Ranch, with the specialized equipment to reach tall mountain windows."],
+        ["Bellyache Ridge", "Proudly serving the homes along Bellyache Ridge. Don't worry about the steep drive or the hillside — we have the equipment to reach every window."]
       ]},
       { name: "Eagle & Gypsum", desc: "Proudly serving all types of homes, townhomes, and condos in Eagle and Gypsum plus nearby communities", areas: [
-        ["Eby Creek"], ["Town of Eagle"], ["Eagle Ranch"], ["Frost Creek"], ["Town of Gypsum", "Proudly serving all of Gypsum."]
+        ["Eby Creek", "Proudly serving the homes and townhomes of Eby Creek, just off the Eagle interchange."],
+        ["Town of Eagle", "Serving homes, townhomes, and businesses throughout the Town of Eagle, from downtown Broadway to the surrounding neighborhoods."],
+        ["Eagle Ranch", "Proudly serving every neighborhood in Eagle Ranch, from the village homes to the houses along the golf course."],
+        ["Frost Creek", "Serving the mountain homes of Frost Creek, with the specialized equipment to reach tall windows and steep lots."],
+        ["Town of Gypsum", "Proudly serving all of Gypsum."]
       ]}
     ];
     var esc = function (s) { return s.replace(/&/g, "&amp;").replace(/</g, "&lt;"); };
@@ -50,7 +106,7 @@
       return '<div class="region"><h3 class="region-name">' + esc(r.name) + '</h3>' +
         '<p class="region-desc">' + esc(r.desc) + '</p>' +
         r.areas.map(function (a) {
-          return '<div class="area"><h4 class="h3">' + esc(a[0]) + '</h4><p class="p">' + esc(a[1] || "Proudly serving") + '</p></div>';
+          return '<div class="area"><h4 class="h3">' + esc(a[0]) + '</h4><p class="p">' + esc(a[1] || "") + '</p></div>';
         }).join("") + '</div>';
     }).join("");
   </script>

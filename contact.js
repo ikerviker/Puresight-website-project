@@ -86,6 +86,7 @@
           form.hidden = true;
           success.hidden = false;
           success.focus();
+          if (window.gtag) gtag("event", "generate_lead");
           return;
         }
         if (res.body.fields) showErrors(res.body.fields);

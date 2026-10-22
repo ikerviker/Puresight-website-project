@@ -230,6 +230,19 @@ a { color: inherit; text-decoration: none; }
   margin: 0 0 66px;
 }
 
+/* ---------- trust line (small supporting text next to quote buttons) ---------- */
+.trust-line {
+  text-align: center;
+  font-size: 13px;
+  letter-spacing: .04em;
+  line-height: 1.5;
+  color: var(--muted);
+  margin: 0;
+}
+.hero .trust-line { color: #c4c8ce; margin-top: 22px; }
+.section-title + .trust-line { margin: -24px 0 40px; }
+.lede + .trust-line { margin: -16px 0 30px; }
+
 /* ---------- traits ---------- */
 .traits { max-width: 1104px; margin: 0 auto; }
 .trait + .trait { margin-top: 36px; }
@@ -379,6 +392,18 @@ a { color: inherit; text-decoration: none; }
 .reviews-link:active { opacity: .6; }
 .reviews-error { text-align: center; font-size: 16px; margin: 0 0 24px; }
 
+/* ---------- faq ---------- */
+.faq-item + .faq-item { margin-top: 36px; }
+.faq .h3 { margin-bottom: 8px; }
+.faq a {
+  color: var(--ink);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: opacity .2s ease;
+}
+.faq a:hover { opacity: .7; }
+.faq a:active { opacity: .5; }
+
 /* ---------- quote / info ---------- */
 .info { text-align: center; }
 .info .h3 { margin-bottom: 18px; }
@@ -495,6 +520,45 @@ a { color: inherit; text-decoration: none; }
   letter-spacing: .02em;
 }
 .footer p { margin: 0; }
+
+/* ---------- mobile action bar ---------- */
+.action-bar { display: none; }
+@media (max-width: 768px) {
+  .action-bar {
+    position: fixed;
+    left: 0; right: 0; bottom: 0;
+    z-index: 30;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: rgba(255, 255, 255, .14);
+    padding-bottom: env(safe-area-inset-bottom);
+    box-shadow: 0 -1px 2px rgba(8, 18, 30, .08), 0 -8px 24px rgba(8, 18, 30, .14);
+  }
+  .action-bar a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 56px;
+    padding: 4px 6px 0;
+    background: var(--navy-btn);
+    color: #fff;
+    font-size: 13px;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    text-align: center;
+    line-height: 1.2;
+    transition: opacity .2s ease, transform .3s var(--spring);
+  }
+  .action-bar a.action-quote { background: var(--mist); color: var(--ink); }
+  .action-bar a:hover { opacity: .88; }
+  .action-bar a:focus-visible { outline: 2px solid #fff; outline-offset: -4px; }
+  .action-bar a.action-quote:focus-visible { outline-color: var(--ink); }
+  .action-bar a:active { transform: scale(.97); opacity: .8; }
+  /* keep the footer and the contact form's Send button clear of the bar */
+  body { padding-bottom: calc(56px + env(safe-area-inset-bottom)); }
+  html { scroll-padding-bottom: 80px; }
+}
 
 /* ---------- responsive ---------- */
 @media (max-width: 1100px) {

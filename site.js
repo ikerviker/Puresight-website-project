@@ -36,7 +36,13 @@
     '</header>';
 
   var footer =
-    '<footer class="footer"><p>Copyright © 2026 Puresight Window Cleaning - All Rights Reserved.</p></footer>';
+    '<footer class="footer"><p>Copyright © 2026 Puresight Window Cleaning - All Rights Reserved.</p></footer>' +
+    // Fixed to the bottom of the screen on phones only (see .action-bar in styles.css).
+    '<nav class="action-bar" aria-label="Quick contact">' +
+      '<a href="tel:' + PHONE + '">Call Now</a>' +
+      '<a href="sms:' + PHONE + '">Text Us</a>' +
+      '<a class="action-quote" href="' + (page === "contact" ? "#quote-form" : "contact.html") + '">Get a Quote</a>' +
+    '</nav>';
 
   document.body.insertAdjacentHTML("afterbegin", header);
   document.body.insertAdjacentHTML("beforeend", footer);
