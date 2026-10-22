@@ -11,8 +11,18 @@
   var inMore = more.some(function (m) { return m.id === page; });
   var chevron = '<svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M2 4.2l4 4 4-4"/></svg>';
 
+  // Decorative leaves around the seasonal banner text.
+  var leaf = function (cls) {
+    return '<svg class="tb-leaf ' + cls + '" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20C4 11 10 5 20 4c-1 10-7 16-16 16z"/><path d="M4 20l9-9M9 15h4M12 12V8"/></svg>';
+  };
+  var autumnLeaf = '<svg class="tb-leaf tb-autumn" viewBox="0 0 24 24" aria-hidden="true"><path fill="#e0702f" d="M3 21C3 12 9 6 19 5c-1 10-7 16-16 16z"/><path fill="#c8432b" d="M10 21c0-6 4-11 11-12-1 7-5 12-11 12z"/></svg>';
+
   var header =
-    '<div class="topbar">Now Open for 2026 Summer season</div>' +
+    '<div class="topbar">' +
+      '<span class="tb-pair">' + leaf("") + leaf("tb-flip") + '</span>' + autumnLeaf +
+      '<span class="tb-text">Fall Special: $50 off Gutter cleaning Bundled with window Clean</span>' +
+      leaf("tb-flip") + leaf("tb-far") +
+    '</div>' +
     '<header class="header">' +
       '<div class="header-inner">' +
         '<button class="burger" aria-label="Open menu" aria-expanded="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button>' +
