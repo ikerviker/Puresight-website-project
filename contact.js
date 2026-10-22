@@ -51,7 +51,7 @@
     return {
       name: get("name"), email: get("email"), phone: get("phone"), service: get("service"),
       address: get("address"), timeframe: get("timeframe"), message: get("message"),
-      company: form.elements.company.value
+      hp_check: form.elements.hp_check.value
     };
   }
 

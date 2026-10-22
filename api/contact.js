@@ -83,7 +83,10 @@ export default async function handler(req, res) {
   }
 
   // Honeypot: real visitors never see this field. Pretend success so bots don't retry.
-  if (typeof body.company === "string" && body.company.trim() !== "") {
+  // Its name must be one browser autofill doesn't recognize (it used to be "company",
+  // which autofill filled in, silently dropping real customers' messages).
+  if (typeof body.hp_check === "string" && body.hp_check.trim() !== "") {
+    console.warn("Contact form: honeypot filled, message not sent.");
     return res.status(200).json({ ok: true });
   }
 
@@ -118,6 +121,7 @@ export default async function handler(req, res) {
       console.error("Resend error", r.status, await r.text());
       return res.status(502).json({ error: "We couldn't send your message. Please try again or call 970-306-7489." });
     }
+    console.log("Contact form: email sent", (await r.json().catch(() => ({}))).id || "");
   } catch (err) {
     console.error("Resend request failed", err);
     return res.status(502).json({ error: "We couldn't send your message. Please try again or call 970-306-7489." });
