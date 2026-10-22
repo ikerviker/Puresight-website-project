@@ -10,12 +10,18 @@
     gtag('js', new Date());
     gtag('config', 'G-4PRHTJR61X');
   </script>
-  <title>Window, Gutter &amp; Solar Panel Cleaning | Puresight — Eagle County, CO</title>
+  <title>Window, Gutter &amp; Solar Panel Cleaning | Puresight</title>
   <meta name="description" content="Interior &amp; exterior window cleaning, gutter cleaning, and solar panel cleaning in Eagle County, CO. Pure-water system, no chemicals, insured to $1MM.">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Window, Gutter &amp; Solar Panel Cleaning | Puresight — Eagle County, CO">
+  <meta property="og:title" content="Window, Gutter &amp; Solar Panel Cleaning | Puresight">
   <meta property="og:description" content="Interior &amp; exterior window cleaning, gutter cleaning, and solar panel cleaning in Eagle County, CO. Pure-water system, no chemicals, insured to $1MM.">
   <meta property="og:image" content="https://puresight-website-project.vercel.app/images/window-cleaning-service.jpg">
+  <meta property="og:url" content="https://puresight-website-project.vercel.app/services-offered">
+  <meta property="og:site_name" content="Puresight Window Cleaning">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Window, Gutter &amp; Solar Panel Cleaning | Puresight">
+  <meta name="twitter:description" content="Interior &amp; exterior window cleaning, gutter cleaning, and solar panel cleaning in Eagle County, CO. Pure-water system, no chemicals, insured to $1MM.">
+  <meta name="twitter:image" content="https://puresight-website-project.vercel.app/images/window-cleaning-service.jpg">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -48,13 +54,84 @@
     ],
     "sameAs": [
       "https://maps.google.com/maps?cid=1068241686919046436"
-    ]
+    ],
+    "@id": "https://puresight-website-project.vercel.app/#business",
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Cleaning services",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Window cleaning",
+            "description": "Interior and exterior window cleaning with a pure-water (de-ionized) system."
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Gutter cleaning",
+            "description": "Clearing leaves, pine needles, and debris from gutters and flushing downspouts."
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Solar panel cleaning",
+            "description": "Pure-water solar panel cleaning with no chemicals or residue."
+          }
+        }
+      ]
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "5.0",
+      "reviewCount": "23",
+      "bestRating": "5"
+    }
   }
   </script>
 </head>
 <body data-page="services">
+  <!-- site:header -->
+  <a class="topbar" href="contact.html?service=bundle">
+    <span class="tb-pair"><svg class="tb-leaf" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20C4 11 10 5 20 4c-1 10-7 16-16 16z"/><path d="M4 20l9-9M9 15h4M12 12V8"/></svg><svg class="tb-leaf tb-flip" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20C4 11 10 5 20 4c-1 10-7 16-16 16z"/><path d="M4 20l9-9M9 15h4M12 12V8"/></svg></span><svg class="tb-leaf tb-autumn" viewBox="0 0 24 24" aria-hidden="true"><path fill="#e0702f" d="M3 21C3 12 9 6 19 5c-1 10-7 16-16 16z"/><path fill="#c8432b" d="M10 21c0-6 4-11 11-12-1 7-5 12-11 12z"/></svg>
+    <span class="tb-text">Fall Special: $50 off gutter cleaning when you bundle it with a window cleaning</span>
+    <svg class="tb-leaf tb-flip" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20C4 11 10 5 20 4c-1 10-7 16-16 16z"/><path d="M4 20l9-9M9 15h4M12 12V8"/></svg><svg class="tb-leaf tb-far" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20C4 11 10 5 20 4c-1 10-7 16-16 16z"/><path d="M4 20l9-9M9 15h4M12 12V8"/></svg>
+  </a>
+  <header class="header">
+    <div class="header-inner">
+      <button class="burger" aria-label="Open menu" aria-expanded="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button>
+      <nav class="nav" aria-label="Main">
+        <a class="nav-link" href="index.html">Home</a>
+        <a class="nav-link" href="contact.html">Contact</a>
+        <div class="more">
+          <button class="nav-link" aria-expanded="false" aria-haspopup="true" aria-current="page">More <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M2 4.2l4 4 4-4"/></svg></button>
+          <div class="dropdown">
+            <a href="services-offered.html" aria-current="page">Services Offered</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="service-areas.html">Service Areas</a>
+          </div>
+        </div>
+      </nav>
+      <a class="logo" href="index.html">Puresight Window Cleaning</a>
+      <div class="header-cta"><a class="btn btn-dark" href="tel:970-306-7489">Call Us Now</a></div>
+    </div>
+    <nav class="mobile-menu" aria-label="Mobile">
+      <a href="index.html">Home</a>
+      <a href="contact.html">Contact</a>
+      <a href="services-offered.html" aria-current="page">Services Offered</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="service-areas.html">Service Areas</a>
+      <a href="tel:970-306-7489">Call 970-306-7489</a>
+    </nav>
+  </header>
+  <!-- /site:header -->
   <main class="section">
-    <h1 class="section-title">Our Services</h1>
+    <h1 class="section-title">Window, Gutter &amp; Solar Panel Cleaning</h1>
     <p class="trust-line">Fully insured to $1MM · 23 five-star Google reviews · Free quotes within 24 hours</p>
     <div class="container">
       <figure class="service-figure">
@@ -62,6 +139,7 @@
         <figcaption>
           <h2 class="h3">Window Cleaning</h2>
           <p class="p">Interior and Exterior Window Cleaning, If it's glass, we'll clean it!</p>
+          <a class="btn btn-mist service-cta" href="contact.html?service=window">Get a Window Cleaning Quote</a>
         </figcaption>
       </figure>
       <div class="service-grid">
@@ -70,6 +148,7 @@
           <figcaption>
             <h2 class="h3">Gutter Cleaning</h2>
             <p class="p">We clear leaves, pine needles, and debris from your gutters and flush the downspouts so water drains away from your roof and foundation — especially important before snow season in the mountains.</p>
+            <a class="btn btn-mist service-cta" href="contact.html?service=gutter">Get a Gutter Cleaning Quote</a>
           </figcaption>
         </figure>
         <figure class="service-figure">
@@ -77,11 +156,31 @@
           <figcaption>
             <h2 class="h3">Solar Panel Cleaning</h2>
             <p class="p">Dust, pollen, and bird droppings cut your panels' output. We clean them with the same pure-water system we use on glass — no chemicals and no residue — so you get every watt you're paying for.</p>
+            <a class="btn btn-mist service-cta" href="contact.html?service=solar">Get a Solar Panel Cleaning Quote</a>
           </figcaption>
         </figure>
       </div>
     </div>
   </main>
+  <!-- site:footer -->
+  <footer class="footer">
+    <nav class="footer-links" aria-label="Footer">
+      <a href="index.html">Home</a>
+      <a href="services-offered.html">Services</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="service-areas.html">Service Areas</a>
+      <a href="contact.html">Free Quote</a>
+    </nav>
+    <p class="footer-nap">Window, gutter &amp; solar panel cleaning in Vail and across Eagle County, Colorado<br>
+      <a href="tel:970-306-7489">970-306-7489</a> · <a href="mailto:iker@puresightwc.com">iker@puresightwc.com</a> · Mon–Sat 8AM–5PM</p>
+    <p>Copyright © 2026 Puresight Window Cleaning - All Rights Reserved.</p>
+  </footer>
+  <nav class="action-bar" aria-label="Quick contact">
+    <a href="tel:970-306-7489">Call Now</a>
+    <a href="sms:970-306-7489">Text Us</a>
+    <a class="action-quote" href="contact.html">Get a Quote</a>
+  </nav>
+  <!-- /site:footer -->
   <script src="site.js"></script>
 </body>
 </html>

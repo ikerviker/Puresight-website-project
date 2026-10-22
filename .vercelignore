@@ -1,0 +1,5 @@
+# Project files that shouldn't be served on the live site.
+CLAUDE.md
+serve.ps1
+screenshot.ps1
+tools

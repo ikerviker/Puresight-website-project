@@ -8,6 +8,11 @@
   var EMAIL_RE = /^[^\s@<>()[\]\\,;:"]+@[^\s@<>()[\]\\,;:"]+\.[^\s@<>()[\]\\,;:"]{2,}$/;
   var REQUIRED = ["name", "email", "phone", "message"];
 
+  // Links like contact.html?service=gutter arrive with that service already chosen.
+  var wanted = new URLSearchParams(location.search).get("service");
+  var preset = wanted && form.elements.service.querySelector('option[data-key="' + wanted.replace(/[^a-z]/g, "") + '"]');
+  if (preset) preset.selected = true;
+
   // Mirrors the checks in api/contact.js so most mistakes are caught before sending.
   function validate(v) {
     var errors = {};

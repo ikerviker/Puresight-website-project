@@ -1,63 +1,7 @@
-// Shared header + footer so every page stays in sync.
+// Header menu behavior. The header and footer markup itself is written into each page by tools/sync.mjs.
 (function () {
-  var PHONE = "970-306-7489";
-  var page = document.body.dataset.page;
-  var more = [
-    { id: "services", href: "services-offered.html", label: "Services Offered" },
-    { id: "gallery", href: "gallery.html", label: "Gallery" },
-    { id: "areas", href: "service-areas.html", label: "Service Areas" }
-  ];
-  var cur = function (id) { return page === id ? ' aria-current="page"' : ""; };
-  var inMore = more.some(function (m) { return m.id === page; });
-  var chevron = '<svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M2 4.2l4 4 4-4"/></svg>';
-
-  // Decorative leaves around the seasonal banner text.
-  var leaf = function (cls) {
-    return '<svg class="tb-leaf ' + cls + '" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20C4 11 10 5 20 4c-1 10-7 16-16 16z"/><path d="M4 20l9-9M9 15h4M12 12V8"/></svg>';
-  };
-  var autumnLeaf = '<svg class="tb-leaf tb-autumn" viewBox="0 0 24 24" aria-hidden="true"><path fill="#e0702f" d="M3 21C3 12 9 6 19 5c-1 10-7 16-16 16z"/><path fill="#c8432b" d="M10 21c0-6 4-11 11-12-1 7-5 12-11 12z"/></svg>';
-
-  var header =
-    '<div class="topbar">' +
-      '<span class="tb-pair">' + leaf("") + leaf("tb-flip") + '</span>' + autumnLeaf +
-      '<span class="tb-text">Fall Special: $50 off gutter cleaning when you bundle it with a window cleaning</span>' +
-      leaf("tb-flip") + leaf("tb-far") +
-    '</div>' +
-    '<header class="header">' +
-      '<div class="header-inner">' +
-        '<button class="burger" aria-label="Open menu" aria-expanded="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button>' +
-        '<nav class="nav" aria-label="Main">' +
-          '<a class="nav-link" href="index.html"' + cur("home") + '>Home</a>' +
-          '<a class="nav-link" href="contact.html"' + cur("contact") + '>Contact</a>' +
-          '<div class="more">' +
-            '<button class="nav-link" aria-expanded="false" aria-haspopup="true"' + (inMore ? ' aria-current="page"' : "") + '>More ' + chevron + '</button>' +
-            '<div class="dropdown">' + more.map(function (m) { return '<a href="' + m.href + '"' + cur(m.id) + '>' + m.label + '</a>'; }).join("") + '</div>' +
-          '</div>' +
-        '</nav>' +
-        '<a class="logo" href="index.html">Puresight Window Cleaning</a>' +
-        '<div class="header-cta"><a class="btn btn-dark" href="tel:' + PHONE + '">Call Us Now</a></div>' +
-      '</div>' +
-      '<nav class="mobile-menu" aria-label="Mobile">' +
-        '<a href="index.html"' + cur("home") + '>Home</a>' +
-        '<a href="contact.html"' + cur("contact") + '>Contact</a>' +
-        more.map(function (m) { return '<a href="' + m.href + '"' + cur(m.id) + '>' + m.label + '</a>'; }).join("") +
-        '<a href="tel:' + PHONE + '">Call ' + PHONE + '</a>' +
-      '</nav>' +
-    '</header>';
-
-  var footer =
-    '<footer class="footer"><p>Copyright © 2026 Puresight Window Cleaning - All Rights Reserved.</p></footer>' +
-    // Fixed to the bottom of the screen on phones only (see .action-bar in styles.css).
-    '<nav class="action-bar" aria-label="Quick contact">' +
-      '<a href="tel:' + PHONE + '">Call Now</a>' +
-      '<a href="sms:' + PHONE + '">Text Us</a>' +
-      '<a class="action-quote" href="' + (page === "contact" ? "#quote-form" : "contact.html") + '">Get a Quote</a>' +
-    '</nav>';
-
-  document.body.insertAdjacentHTML("afterbegin", header);
-  document.body.insertAdjacentHTML("beforeend", footer);
-
   var hdr = document.querySelector(".header");
+  if (!hdr) return;
   var moreEl = hdr.querySelector(".more");
   var moreBtn = moreEl.querySelector("button");
   var burger = hdr.querySelector(".burger");

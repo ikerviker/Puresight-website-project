@@ -8,7 +8,7 @@
 //                                 e.g. "Puresight Website <website@puresightwc.com>"
 
 const LIMITS = { name: 100, email: 254, phone: 30, address: 200, timeframe: 100, message: 5000 };
-const SERVICES = ["Window cleaning", "Gutter cleaning", "Solar panel cleaning", "More than one service", "Not sure yet"];
+const SERVICES = ["Window cleaning", "Gutter cleaning", "Solar panel cleaning", "Window + gutter bundle (Fall Special)", "More than one service", "Not sure yet"];
 const EMAIL_RE = /^[^\s@<>()[\]\\,;:"]+@[^\s@<>()[\]\\,;:"]+\.[^\s@<>()[\]\\,;:"]{2,}$/;
 
 function clean(value, max) {
