@@ -6,6 +6,8 @@
 //   CONTACT_TO_EMAIL    required  where submissions are delivered
 //   CONTACT_FROM_EMAIL  optional  sender, must be on a domain verified in Resend
 //                                 e.g. "Puresight Website <website@puresightwc.com>"
+//   TELEGRAM_BOT_TOKEN  optional  also send each request to Telegram as a phone alert
+//   TELEGRAM_CHAT_ID    optional  chat(s) that get the alert, comma-separated
 
 const LIMITS = { name: 100, email: 254, phone: 30, address: 200, timeframe: 100, message: 5000 };
 const SERVICES = ["Window cleaning", "Gutter cleaning", "Solar panel cleaning", "Window + gutter bundle (Fall Special)", "More than one service", "Not sure yet"];
@@ -68,6 +70,41 @@ function buildEmail(d) {
   return { text, html };
 }
 
+// Phone alert with the full request, so new leads are seen without checking email.
+// Never blocks the form: failures are only logged, and a slow Telegram is given up on.
+async function sendTelegramAlert(d) {
+  const token = process.env.TELEGRAM_BOT_TOKEN;
+  const chatIds = (process.env.TELEGRAM_CHAT_ID || "").split(",").map((s) => s.trim()).filter(Boolean);
+  if (!token || !chatIds.length) return;
+
+  // Telegram allows 4096 characters per message; the other fields fit well within the rest.
+  const message = d.message.length > 3000 ? d.message.slice(0, 3000) + "… (full message in email)" : d.message;
+  const text =
+    `<b>🔔 New quote request</b>\n\n` +
+    `<b>Name:</b> ${escapeHtml(d.name)}\n` +
+    `<b>Phone:</b> ${escapeHtml(d.phone)}\n` +
+    `<b>Email:</b> ${escapeHtml(d.email)}\n` +
+    `<b>Service:</b> ${escapeHtml(d.service || "Not specified")}\n` +
+    `<b>Address:</b> ${escapeHtml(d.address || "Not provided")}\n` +
+    `<b>Timeframe:</b> ${escapeHtml(d.timeframe || "Not provided")}\n\n` +
+    `<b>Message:</b>\n${escapeHtml(message)}`;
+
+  await Promise.all(chatIds.map(async (chatId) => {
+    try {
+      const r = await fetch(`https://api.telegram.org/bot${token}/sendMessage`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ chat_id: chatId, text, parse_mode: "HTML", disable_web_page_preview: true }),
+        signal: AbortSignal.timeout(5000),
+      });
+      if (!r.ok) console.error("Telegram alert failed", chatId, r.status, await r.text());
+      else console.log("Contact form: Telegram alert sent");
+    } catch (err) {
+      console.error("Telegram alert failed", chatId, err);
+    }
+  }));
+}
+
 export default async function handler(req, res) {
   if (req.method !== "POST") {
     res.setHeader("Allow", "POST");
@@ -127,5 +164,6 @@ export default async function handler(req, res) {
     return res.status(502).json({ error: "We couldn't send your message. Please try again or call 970-306-7489." });
   }
 
+  await sendTelegramAlert(data);
   return res.status(200).json({ ok: true });
 }
